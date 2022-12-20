@@ -100,7 +100,6 @@ def update_view(request, id):
             data.updater = request.user
             data.save()
             return reverse("products:product_detail_detail", kwargs={"id": data.id})
-    else:
 
     # add form dictionary to context
     context["form"] = form
