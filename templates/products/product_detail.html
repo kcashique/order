@@ -1,0 +1,39 @@
+{% extends "partials/header.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+
+<div class="main">
+
+    <!-- Specify fields to be displayed -->
+    <div class="col-md-6 mb-4">
+
+          <!--Content-->
+          <div class="p-4">
+
+            <p class="lead">
+              <span>${{ data.price }}</span>
+            </p>
+
+            <p class="lead font-weight-bold">Description</p>
+
+            <p>{{ data.description }}</p>
+
+            <a href="{{ data.get_add_to_cart_url }}" class="btn btn-primary btn-md my-0 p">
+              Add to cart
+              <i class="fas fa-shopping-cart ml-1"></i>
+            </a>
+            <a href="{{ data.get_remove_from_cart_url }}" class="btn btn-danger btn-md my-0 p">
+              Remove from cart
+            </a>
+
+          </div>
+          <!--Content-->
+
+        </div>
+
+</div>
+
+{% endblock %}

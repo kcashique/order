@@ -1,0 +1,21 @@
+{% extends "partials/header.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+<div class="album py-5 bg-light">
+    <div class="container">
+
+<form method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    <!-- Using the formset -->
+    {{ form|crispy }}
+
+    <input type="submit" value="update">
+</form>
+
+</div>
+</div>
+{% endblock %}
