@@ -36,6 +36,11 @@ class Product(models.Model):
         return reverse("products:edit", kwargs={
             'id': self.id
         })
+    
+    def delete_product_url(self):
+        return reverse("products:product_delete", kwargs={
+            'id': self.id
+        })
 
     def get_add_to_cart_url(self):
         return reverse("products:add-to-cart", kwargs={
